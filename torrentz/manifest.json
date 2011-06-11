@@ -1,0 +1,11 @@
+{
+   "name": "Torrentz Magnet Links for Chrome",
+   "description": "Add a Magnet link to Torrentz with all available trackers",
+   "content_scripts": [ {
+      "js": [ "jquery.min.js", "replace.js" ],
+      "matches": [ "http://torrentz.eu/*","https://torrentz.eu/*" ],
+      "run_at": "document_start"
+   } ],
+   "version": "1.2.4",
+   "icons": { "48": "48magnet.png", "128": "128magnet.png" }
+}
