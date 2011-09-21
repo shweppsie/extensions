@@ -6,6 +6,6 @@
       "matches": [ "http://torrentz.eu/*","https://torrentz.eu/*" ],
       "run_at": "document_start"
    } ],
-   "version": "1.2.4",
+   "version": "1.2.5",
    "icons": { "48": "48magnet.png", "128": "128magnet.png" }
 }
