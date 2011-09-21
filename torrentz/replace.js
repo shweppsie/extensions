@@ -74,23 +74,23 @@ $(document).ready(function(){
 	// Add magnet icons to the related torrents
 	$("div.results").each(function(){
 		var block = this;
-		
+
 		// For each result
 		$("dl > dt", block).each(function(){
 			// Grab the dt
 			var dt = this;
-			
+
 			// Grab the torrent details
 			var link = $("a", dt);
 			var title = link.text();
 			var infoHash = link.attr('href').match(urlExpr)[1];
-			
+
 			// Set the initial magnet link without trackers, we'll update it later
 			dt.innerHTML = '<a href="magnet:?xt=urn:btih:' + infoHash + '&dn=' + title + '" title="Magnet Link"><img src="' + ImageData + '" alt="Magnet Link" border="0" width="14" height="14"/></a>&nbsp;' + dt.innerHTML;
 
 			// Grab the link so we can update the URI later
 			link = $("a", dt).get(0);
-			
+
 			// Ajax Update function
 			var update = (function(pLink, pTitle, pHash){
 				return function(response) {
