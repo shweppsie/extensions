@@ -94,17 +94,15 @@ $(document).ready(function(){
 			// Ajax Update function
 			var update = (function(pLink, pTitle, pHash){
 				return function(response) {
-					// Split the response by line
-					response = response.split(/[\t\r\n]+/g);
+
+					// Regex to catch trackers
+					var regex = /tracker_[0-9]*\">([^<]*)</g
 
 					// Generate the tracker list
-					var trackers = "";
-					for(var i = 0; i < response.length; i++) {
-						// Skip blank lines
-						if(response[i] == "")
-							continue;
-
-						trackers += "&tr=" + response[i];
+					match = regex.exec(response);
+					while (match != null){
+						trackers += "&tr=" + match[1];
+						match = regex.exec(response);
 					}
 
 					// Generate the new url
@@ -114,7 +112,7 @@ $(document).ready(function(){
 
 			// Asynchronous grab for trackers
 			$.ajax({
-				url: window.location.protocol + "//" + window.location.hostname + "/announce_" + infoHash,
+				url: window.location.protocol + "//" + window.location.hostname + "/" + infoHash,
 				dataType: "text",
 				success: update
 			});
