@@ -1,5 +1,5 @@
 {
-   "name": "Torrentz Magnet Links for Chrome",
+   "name": "Torrentz Magnet Links for Google Chrome™",
    "description": "Add a Magnet link to Torrentz with all available trackers",
    "content_scripts": [ {
       "js": [ "jquery.min.js", "replace.js" ],
