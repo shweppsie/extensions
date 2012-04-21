@@ -33,12 +33,12 @@ $(document).ready(function(){
 		var infoHash = window.location.href.match(urlExpr)[1];
 
 		// Get the title
-		var title = $("h2 > span", downloadBlock).text();
+		var title = escape( $("h2 > span", downloadBlock).text() );
 
 		// Get the trackers
 		var trackers = "";
 		$("dl > dt > a", trackersBlock).each(function(){
-				trackers += "&tr=" + this.innerHTML;
+				trackers += "&tr=" + escape(this.innerHTML);
 		});
 
 		// Create the magnet link
