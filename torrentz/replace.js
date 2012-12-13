@@ -84,7 +84,7 @@ $(document).ready(function(){
 
 			// Grab the torrent details
 			var link = $("a", dt);
-			var title = link.text();
+			var title = escape( link.text() );
 
 			var href = link.attr('href');
 			if(href == null)
