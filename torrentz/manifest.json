@@ -3,7 +3,7 @@
    "description": "Add a Magnet link to Torrentz with all available trackers",
    "content_scripts": [ {
       "js": [ "jquery.min.js", "replace.js" ],
-      "matches": [ "http://torrentz.eu/*","https://torrentz.eu/*" ],
+      "matches": [ "*://torrentz.eu/*", "*://torrentz.me/*", "*://torrentz.in/*", "*://torrentz.ph/*" ],
       "run_at": "document_start"
    } ],
    "version": "1.3.0",
